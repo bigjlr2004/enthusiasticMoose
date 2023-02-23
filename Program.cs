@@ -1,14 +1,32 @@
-﻿
-using System;
-
-Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
-Console.WriteLine("--------------------------------------------");
+﻿using System;
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine("Welcome to the Enthusiastic Moose Simulator");
+Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+Console.WriteLine("We are Happy You ARE Here!!!!!    ");
+Console.WriteLine();
 Console.WriteLine();
 
-
-void MooseSays()
+//Moose Speaks
+MooseSays("HEY, I'm an ehtusiastic moose WOOT WOOT!!");
+MooseSays("NO REALLY I AM!!!!!! ENTHUSIASTIC!!!!");
+MooseSays("Is Canada real?");
+//Moose Asks A Question
+string question = "Is Canada real?";
+bool isTrue = MooseAsks(question);
+if (isTrue)
 {
-    Console.WriteLine(@"
+    MooseSays("Really? It seems very unlikely.");
+}
+else
+{
+    MooseSays("I KNEW IT !!!");
+}
+
+
+void MooseSays(string message)
+{
+    Console.WriteLine($@"
                                        _.--^^^--,
                                     .'          `\
   .-^^^^^^-.                      .'              |
@@ -24,8 +42,8 @@ void MooseSays()
           \_/ |  |   './ _     _  \.'
                '-'    | /       \ |
                       |  .-. .-.  |
-                      \ / o| |o \ /
-                       |   / \   |    H I, I'M  E N T H U S I A S T I C !
+                      \ / o| |x \ /
+                       |   / \   |    {message}
                       / `^`   `^` \
                      /             \
                     | '._.'         \
@@ -36,9 +54,25 @@ void MooseSays()
                       \ \'._  ` '_.'
                        `^^` `^^^`
     ");
-};
-MooseSays();
-System.Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
-System.Console.WriteLine("-------------------------------------------");
+}
 
+bool MooseAsks(string question)
+{
+    Console.Write(" (Y/N): ");
+    string answer = Console.ReadLine().ToLower();
 
+    while (answer != "y" && answer != "n")
+    {
+        Console.Write($"{question} (Y/N): ");
+        answer = Console.ReadLine().ToLower();
+    }
+
+    if (answer == "y")
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
