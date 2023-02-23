@@ -1,26 +1,80 @@
 ﻿using System;
-Console.WriteLine();
-Console.WriteLine();
-Console.WriteLine("Welcome to the Enthusiastic Moose Simulator");
-Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-Console.WriteLine("We are Happy You ARE Here!!!!!    ");
-Console.WriteLine();
-Console.WriteLine();
+Main();
+void Main()
+{
+    Console.WriteLine();
+    Console.WriteLine();
+    Console.WriteLine("Welcome to the Enthusiastic Moose Simulator");
+    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
-//Moose Speaks
-MooseSays("HEY, I'm an ehtusiastic moose WOOT WOOT!!");
-MooseSays("NO REALLY I AM!!!!!! ENTHUSIASTIC!!!!");
-MooseSays("Is Canada real?");
-//Moose Asks A Question
-string question = "Is Canada real?";
-bool isTrue = MooseAsks(question);
-if (isTrue)
-{
-    MooseSays("Really? It seems very unlikely.");
+    Console.WriteLine();
+    Console.WriteLine();
+
+    //Moose Speaks
+    MooseSays("HEY, I'm an enthusiastic moose WOOT WOOT!!");
+    MooseSays("NO REALLY I AM!!!!!! ENTHUSIASTIC!!!!");
+    CanadaQuestion("Is Canada real?");
+    EnthusiasticQuestion();
+    LoveCSharpQuestion();
+    SecretQuestion();
+    Console.WriteLine("We are Happy WE ARE Here!!!!!    ");
 }
-else
+
+//Moose Asks A Question
+void EnthusiasticQuestion()
 {
-    MooseSays("I KNEW IT !!!");
+    MooseSays("Are you enthusiastic?");
+    bool isEnthusiastic = MooseAsks("Are you enthusiastic?");
+    if (isEnthusiastic)
+    {
+        MooseSays("Yay!");
+    }
+    else
+    {
+        MooseSays("You should try it!");
+    }
+}
+
+void LoveCSharpQuestion()
+{
+    MooseSays("Do you love C# yet?");
+    bool doesLoveCSharp = MooseAsks("Do you love C# yet?");
+    if (doesLoveCSharp)
+    {
+        MooseSays("Good job sucking up to your instructor!");
+    }
+    else
+    {
+        MooseSays("You will...oh, yes, you will...");
+    }
+}
+
+void SecretQuestion()
+{
+    MooseSays("Do you want to know a secret?");
+    bool wantsSecret = MooseAsks("Do you want to know a secret?");
+    if (wantsSecret)
+    {
+        MooseSays("ME TOO!!!! I love secrets...tell me one!");
+    }
+    else
+    {
+        MooseSays("Oh, no...secrets are the best, I love to share them!");
+    }
+}
+void CanadaQuestion(string question)
+{
+    MooseSays(question);
+    ;
+    bool isTrue = MooseAsks(question);
+    if (isTrue)
+    {
+        MooseSays("Really? It seems very unlikely.");
+    }
+    else
+    {
+        MooseSays("I KNEW IT !!!");
+    }
 }
 
 
